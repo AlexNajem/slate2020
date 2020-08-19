@@ -54,7 +54,7 @@ html, body {
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 0;
+  top: $pex-header-height;
   left: 0;
   bottom: 0;
   width: $nav-width;
@@ -172,6 +172,8 @@ html, body {
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
     font-size: 12px;
+    word-wrap: break-word;
+    word-break: break-all;
   }
 
   .toc-footer {
@@ -253,6 +255,7 @@ html, body {
   z-index: 10;
   background-color: $main-bg;
   min-height: 100%;
+  top:$pex-header-height;
 
   padding-bottom: 1px; // prevent margin overflow
 
@@ -271,7 +274,7 @@ html, body {
   }
 
   .lang-selector {
-    position: fixed;
+    position: sticky;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;
   }
@@ -589,6 +592,10 @@ html, body {
     display: none;
   }
 
+  #pex-nav-bar{
+    display: none;
+  }
+
   %left-col {
     margin-right: 0;
   }
@@ -630,4 +637,16 @@ html, body {
 
 .copy-clipboard:hover {
   opacity: 0.8;
+}
+
+#pex-nav-bar{
+  width:100%;
+  display: block;
+  height: $pex-header-height;
+  border: 1px red solid;
+  z-index: 5000;
+  color: green;
+  position: fixed;
+  background-color: green;
+  opacity: 50%;
 }
